@@ -138,10 +138,10 @@ const ComparePage = () => {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(99, 102, 241, 0.1)', color: '#818cf8', padding: '0.35rem 0.9rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.75rem', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
           <GitCompare size={15} /> Multi-City Telemetry Analysis
         </div>
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
+        <h2 className="page-hero-title">
           Side-by-Side City Pollution Comparison
         </h2>
-        <p style={{ color: 'var(--text-secondary)' }}>
+        <p className="page-hero-subtitle">
           Benchmark particulate concentration, US EPA AQI index, and health risk profiles across two municipal regions.
         </p>
       </div>
@@ -242,16 +242,16 @@ const ComparePage = () => {
           )}
 
           {/* Side by Side Scorecards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {/* City 1 Card */}
             <div className="glass-card" style={{ borderTop: `5px solid ${info1.colorHex}` }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.5rem' }}>
                 <div>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800 }}>{city1Data.city}</h3>
+                  <h3 style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.4rem)', fontWeight: 800 }}>{city1Data.city}</h3>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Location A</span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '2.5rem', fontWeight: 800, color: info1.colorHex, lineHeight: 1 }}>
+                  <div style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 800, color: info1.colorHex, lineHeight: 1 }}>
                     {city1Data.aqi}
                   </div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>US AQI</span>
@@ -276,13 +276,13 @@ const ComparePage = () => {
 
             {/* City 2 Card */}
             <div className="glass-card" style={{ borderTop: `5px solid ${info2.colorHex}` }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.5rem' }}>
                 <div>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800 }}>{city2Data.city}</h3>
+                  <h3 style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.4rem)', fontWeight: 800 }}>{city2Data.city}</h3>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Location B</span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '2.5rem', fontWeight: 800, color: info2.colorHex, lineHeight: 1 }}>
+                  <div style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 800, color: info2.colorHex, lineHeight: 1 }}>
                     {city2Data.aqi}
                   </div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>US AQI</span>

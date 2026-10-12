@@ -79,10 +79,10 @@ const GuidelinesPage = () => {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', padding: '0.35rem 0.9rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.75rem', border: '1px solid rgba(16, 185, 129, 0.25)' }}>
           <ShieldCheck size={15} /> Educational & Clinical Health Guidelines
         </div>
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
+        <h2 className="page-hero-title">
           Air Quality Standards & Protective Advisory
         </h2>
-        <p style={{ color: 'var(--text-secondary)' }}>
+        <p className="page-hero-subtitle">
           Authoritative air quality indices, biological impacts of critical pollutants, and practical precautions
           based on US EPA and WHO global standards.
         </p>
@@ -94,7 +94,7 @@ const GuidelinesPage = () => {
           <Activity size={20} color="#38bdf8" /> US EPA Air Quality Index (AQI) Classification
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1rem' }}>
           {aqiCategories.map((cat) => (
             <div
               key={cat.range}
@@ -129,7 +129,7 @@ const GuidelinesPage = () => {
           <Wind size={20} color="#a855f7" /> Common Pollutants & Physiological Hazards
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem' }}>
           <div className="pollutant-stat-card">
             <h4 style={{ color: '#38bdf8', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>
               PM2.5 (Fine Inhalable Particles)
@@ -181,7 +181,7 @@ const GuidelinesPage = () => {
           According to NASA environmental research, these resilient indoor plants significantly reduce volatile organic compounds (VOCs) and indoor pollutants:
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1rem' }}>
           {indoorPlants.map((plant) => (
             <div key={plant.name} className="pollutant-stat-card">
               <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#10b981', marginBottom: '0.4rem' }}>

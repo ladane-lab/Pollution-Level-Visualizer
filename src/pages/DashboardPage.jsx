@@ -64,10 +64,10 @@ const DashboardPage = ({ airQuality }) => {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(56, 189, 248, 0.1)', color: '#38bdf8', padding: '0.35rem 0.9rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.75rem', border: '1px solid rgba(56, 189, 248, 0.25)' }}>
           <Sparkles size={14} /> Real-Time Open Data Environmental Telemetry
         </div>
-        <h2 style={{ fontSize: '2.25rem', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '0.75rem' }}>
+        <h2 className="page-hero-title">
           Real-Time Air Quality & Pollution Visualizer
         </h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.5 }}>
+        <p className="page-hero-subtitle">
           Monitor live US EPA AQI levels, PM2.5/PM10 particulate metrics, health advisories, and 24-hour predictive trends.
         </p>
       </div>
@@ -147,13 +147,13 @@ const DashboardPage = ({ airQuality }) => {
       {!loading && data && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
           {/* Header Action Bar for current city */}
-          <div className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', padding: '1.15rem 1.5rem' }}>
+          <div className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <div style={{ background: 'rgba(56, 189, 248, 0.15)', padding: '0.6rem', borderRadius: '12px', color: '#38bdf8' }}>
                 <MapPin size={24} />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 800 }}>
+                <h3 style={{ fontSize: 'clamp(1.1rem, 3.5vw, 1.35rem)', fontWeight: 800 }}>
                   {data.city}
                 </h3>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>

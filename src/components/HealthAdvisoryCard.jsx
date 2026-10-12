@@ -60,7 +60,7 @@ const HealthAdvisoryCard = ({ aqi }) => {
       </div>
 
       {/* Actionable Protective checklist */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginTop: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '0.65rem', marginTop: '1.25rem' }}>
         <div className="city-chip" style={{ cursor: 'default', justifyContent: 'flex-start', padding: '0.6rem 0.8rem' }}>
           <Wind size={15} color="#38bdf8" />
           <span>{info.level >= 4 ? 'Close Windows & Seal Doors' : 'Natural Ventilation OK'}</span>

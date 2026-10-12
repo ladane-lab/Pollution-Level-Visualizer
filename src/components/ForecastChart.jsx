@@ -79,9 +79,9 @@ const ForecastChart = ({ hourlyData }) => {
         </div>
       </div>
 
-      <div style={{ width: '100%', height: '260px' }}>
+      <div style={{ width: '100%', height: 'clamp(210px, 35vh, 260px)' }}>
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={hourlyData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+          <AreaChart data={hourlyData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
             <defs>
               <linearGradient id="metricGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor={currentConfig.color} stopOpacity={0.6} />

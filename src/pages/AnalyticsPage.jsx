@@ -127,10 +127,10 @@ const AnalyticsPage = ({ airQuality }) => {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(168, 85, 247, 0.1)', color: '#c084fc', padding: '0.35rem 0.9rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.75rem', border: '1px solid rgba(168, 85, 247, 0.25)' }}>
             <TrendingUp size={14} /> In-Depth Environmental Analytics
           </div>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>
+          <h2 className="page-hero-title">
             Pollution Metrics & WHO Compliance
           </h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '680px' }}>
+          <p className="page-hero-subtitle">
             Comprehensive analysis of individual pollutant concentrations against World Health Organization
             threshold limits, historical trend distributions, and compliance exports.
           </p>
@@ -217,7 +217,7 @@ const AnalyticsPage = ({ airQuality }) => {
       </div>
 
       {/* Recharts Visualizations Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.25rem' }}>
         {/* Radar Chart: Actual vs WHO Limit */}
         <div className="glass-card">
           <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
