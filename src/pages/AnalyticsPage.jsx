@@ -226,12 +226,12 @@ const AnalyticsPage = ({ airQuality }) => {
           <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
             Multi-axis radar comparing ambient pollutant measurements against health safety ceilings
           </p>
-          <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(240px, 40vh, 300px)', overflow: 'hidden' }}>
-            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+          <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 280 }}>
+            <ResponsiveContainer width="100%" height={280}>
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={radarData}>
-                <PolarGrid stroke="rgba(255, 255, 255, 0.1)" />
-                <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 12 }} />
-                <PolarRadiusAxis stroke="#64748b" angle={30} domain={[0, 100]} />
+                <PolarGrid stroke="var(--surface-border)" />
+                <PolarAngleAxis dataKey="subject" stroke="var(--text-muted)" tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} />
+                <PolarRadiusAxis stroke="var(--text-muted)" angle={30} domain={[0, 100]} />
                 <Radar name="Observed Level" dataKey="Actual" stroke="#38bdf8" fill="#38bdf8" fillOpacity={0.45} />
                 <Radar name="WHO Safe Cap" dataKey="WHOCap" stroke="#10b981" fill="#10b981" fillOpacity={0.25} />
                 <Tooltip

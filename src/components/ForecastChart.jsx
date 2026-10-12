@@ -79,8 +79,8 @@ const ForecastChart = ({ hourlyData }) => {
         </div>
       </div>
 
-      <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(210px, 35vh, 260px)', overflow: 'hidden' }}>
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+      <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 260 }}>
+        <ResponsiveContainer width="100%" height={260}>
           <AreaChart data={hourlyData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
             <defs>
               <linearGradient id="metricGradient" x1="0" y1="0" x2="0" y2="1">
@@ -88,9 +88,9 @@ const ForecastChart = ({ hourlyData }) => {
                 <stop offset="95%" stopColor={currentConfig.color} stopOpacity={0.0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.08)" vertical={false} />
-            <XAxis dataKey="time" stroke="#64748b" tick={{ fill: '#94a3b8', fontSize: 12 }} tickLine={false} />
-            <YAxis stroke="#64748b" tick={{ fill: '#94a3b8', fontSize: 12 }} tickLine={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--surface-border)" vertical={false} />
+            <XAxis dataKey="time" stroke="var(--text-muted)" tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} tickLine={false} />
+            <YAxis stroke="var(--text-muted)" tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} tickLine={false} />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"

@@ -1214,22 +1214,3 @@ body {
   }
 }
 
-/* Recharts & SVG Global Responsiveness Helpers */
-.recharts-responsive-container {
-  min-width: 0 !important;
-  max-width: 100% !important;
-}
-
-.recharts-wrapper {
-  max-width: 100% !important;
-  min-width: 0 !important;
-}
-
-.recharts-surface {
-  max-width: 100% !important;
-}
-
-svg {
-  max-width: 100%;
-}
-

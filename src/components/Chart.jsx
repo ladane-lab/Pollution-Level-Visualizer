@@ -45,16 +45,16 @@ const Chart = ({ pollutants }) => {
 
   return (
     <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
-      <h3 style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#f8fafc' }}>
-        Pollutant Overview (μg/m³)
+      <h3 style={{ marginBottom: '1.25rem', fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+        Pollutant Overview (µg/m³)
       </h3>
-      <div className="chart-container" style={{ width: '100%', maxWidth: '100%', minWidth: 0, overflow: 'hidden' }}>
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+      <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 260 }}>
+        <ResponsiveContainer width="100%" height={260}>
           <BarChart
             data={data}
             margin={{ top: 5, right: 15, left: -10, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--surface-border)" vertical={false} />
             <XAxis dataKey="name" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} axisLine={false} tickLine={false} />
             <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} axisLine={false} tickLine={false} />
             <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.05)' }} />

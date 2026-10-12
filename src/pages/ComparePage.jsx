@@ -311,12 +311,12 @@ const ComparePage = () => {
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>
               Comparative Pollutant Breakdown (µg/m³)
             </h3>
-            <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(260px, 45vh, 330px)', overflow: 'hidden' }}>
-              <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+            <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 300 }}>
+              <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartData} margin={{ top: 20, right: 20, left: -10, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.08)" vertical={false} />
-                  <XAxis dataKey="pollutant" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
-                  <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--surface-border)" vertical={false} />
+                  <XAxis dataKey="pollutant" stroke="var(--text-muted)" tick={{ fill: 'var(--text-secondary)' }} />
+                  <YAxis stroke="var(--text-muted)" tick={{ fill: 'var(--text-secondary)' }} />
                   <Tooltip
                     contentStyle={{
                       background: 'rgba(15, 23, 42, 0.95)',
