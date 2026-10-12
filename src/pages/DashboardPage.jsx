@@ -206,15 +206,15 @@ const DashboardPage = ({ airQuality }) => {
           {/* Grid: AQI Gauge (Left) + Pollutants Breakdown (Right) */}
           <div className="dashboard-grid">
             {/* Left Column: Animated Radial AQI Gauge & Health Tip */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
               <AQIGauge aqi={data.aqi} lastUpdated={lastUpdated} isFallback={data.isFallback} />
               <HealthAdvisoryCard aqi={data.aqi} />
             </div>
 
             {/* Right Column: Pollutants Cards & Forecast Area Chart */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="glass-card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
+              <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <div>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700 }}>
                       Live Pollutant Breakdown (µg/m³)

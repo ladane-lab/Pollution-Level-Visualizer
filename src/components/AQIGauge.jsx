@@ -19,14 +19,19 @@ const AQIGauge = ({ aqi, lastUpdated, isFallback }) => {
   if (info.level >= 5) Icon = Activity;
 
   return (
-    <div className="glass-card aqi-gauge-card">
+    <div className="glass-card aqi-gauge-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
       {/* Background colored glow */}
       <div
         className="pulse-glow"
         style={{
           position: 'absolute',
-          width: '280px',
-          height: '280px',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '240px',
+          height: '240px',
+          maxWidth: '80%',
+          maxHeight: '80%',
           borderRadius: '50%',
           background: info.colorHex,
           filter: 'blur(75px)',
@@ -36,8 +41,8 @@ const AQIGauge = ({ aqi, lastUpdated, isFallback }) => {
         }}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, width: '100%' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+      <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '100%', minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', gap: '0.5rem', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Air Quality Index (US EPA)
           </span>
@@ -97,12 +102,12 @@ const AQIGauge = ({ aqi, lastUpdated, isFallback }) => {
           {info.label}
         </div>
 
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginTop: '0.75rem', lineHeight: 1.5 }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginTop: '0.75rem', lineHeight: 1.5, textAlign: 'center' }}>
           {info.summary}
         </p>
 
         {lastUpdated && (
-          <div style={{ marginTop: '1rem', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <div style={{ marginTop: '1rem', fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center' }}>
             Observed: {new Date(lastUpdated).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </div>
         )}

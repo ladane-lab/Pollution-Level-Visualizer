@@ -4,7 +4,7 @@ import { Wind, ArrowLeft, Home } from 'lucide-react';
 
 const NotFoundPage = () => {
   return (
-    <div className="glass-card" style={{ textAlign: 'center', padding: '4.5rem 1.5rem', maxWidth: '600px', margin: '3rem auto' }}>
+    <div className="glass-card" style={{ textAlign: 'center', padding: 'clamp(2.5rem, 6vh, 4.5rem) 1.5rem', maxWidth: '600px', width: '100%', minWidth: 0, margin: '2rem auto' }}>
       <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
         <Wind size={36} />
       </div>

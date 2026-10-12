@@ -16,7 +16,7 @@ const HealthAdvisoryCard = ({ aqi }) => {
   ];
 
   return (
-    <div className="glass-card" style={{ borderLeft: `5px solid ${info.colorHex}` }}>
+    <div className="glass-card" style={{ borderLeft: `5px solid ${info.colorHex}`, width: '100%', maxWidth: '100%', minWidth: 0 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
         <div style={{ background: info.bgHex, padding: '0.6rem', borderRadius: '12px', color: info.colorHex }}>
           <HeartPulse size={24} />
@@ -32,7 +32,19 @@ const HealthAdvisoryCard = ({ aqi }) => {
       </div>
 
       {/* Cohort Tabs */}
-      <div style={{ display: 'flex', gap: '0.4rem', borderBottom: '1px solid var(--surface-border)', paddingBottom: '0.5rem', marginBottom: '1rem', overflowX: 'auto' }}>
+      <div style={{
+        display: 'flex',
+        gap: '0.4rem',
+        borderBottom: '1px solid var(--surface-border)',
+        paddingBottom: '0.5rem',
+        marginBottom: '1rem',
+        overflowX: 'auto',
+        width: '100%',
+        maxWidth: '100%',
+        minWidth: 0,
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'thin'
+      }}>
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -42,7 +54,7 @@ const HealthAdvisoryCard = ({ aqi }) => {
               type="button"
               className={`city-chip ${isActive ? 'active' : ''}`}
               onClick={() => setActiveTab(tab.id)}
-              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', flexShrink: 0 }}
             >
               <Icon size={14} />
               {tab.label}
@@ -52,7 +64,7 @@ const HealthAdvisoryCard = ({ aqi }) => {
       </div>
 
       {/* Advisory Text */}
-      <div style={{ background: 'var(--surface-hover)', borderRadius: 'var(--radius-md)', padding: '1.15rem', minHeight: '80px', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <div style={{ background: 'var(--surface-hover)', borderRadius: 'var(--radius-md)', padding: '1.15rem', minHeight: '80px', display: 'flex', alignItems: 'center', gap: '0.75rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
         <CheckCircle2 size={22} style={{ color: info.colorHex, flexShrink: 0 }} />
         <p style={{ fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: 1.6 }}>
           {advisories[activeTab]}
@@ -60,7 +72,7 @@ const HealthAdvisoryCard = ({ aqi }) => {
       </div>
 
       {/* Actionable Protective checklist */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '0.65rem', marginTop: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 150px), 1fr))', gap: '0.65rem', marginTop: '1.25rem', width: '100%', minWidth: 0 }}>
         <div className="city-chip" style={{ cursor: 'default', justifyContent: 'flex-start', padding: '0.6rem 0.8rem' }}>
           <Wind size={15} color="#38bdf8" />
           <span>{info.level >= 4 ? 'Close Windows & Seal Doors' : 'Natural Ventilation OK'}</span>

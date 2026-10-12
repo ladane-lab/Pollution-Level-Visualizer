@@ -181,8 +181,8 @@ const AnalyticsPage = ({ airQuality }) => {
       </div>
 
       {/* Top 3 KPI Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
-        <div className="glass-card" style={{ borderLeft: `5px solid ${aqiInfo.colorHex}` }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1.25rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
+        <div className="glass-card" style={{ borderLeft: `5px solid ${aqiInfo.colorHex}`, width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 600 }}>US EPA AIR QUALITY INDEX</span>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginTop: '0.5rem' }}>
             <span style={{ fontSize: '2.5rem', fontWeight: 800, color: aqiInfo.colorHex, lineHeight: 1 }}>{data.aqi}</span>
@@ -193,7 +193,7 @@ const AnalyticsPage = ({ airQuality }) => {
           </p>
         </div>
 
-        <div className="glass-card" style={{ borderLeft: '5px solid #a855f7' }}>
+        <div className="glass-card" style={{ borderLeft: '5px solid #a855f7', width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 600 }}>FINE PARTICULATE (PM2.5)</span>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginTop: '0.5rem' }}>
             <span style={{ fontSize: '2.5rem', fontWeight: 800, color: '#a855f7', lineHeight: 1 }}>{data.pollutants.pm25}</span>
@@ -204,7 +204,7 @@ const AnalyticsPage = ({ airQuality }) => {
           </p>
         </div>
 
-        <div className="glass-card" style={{ borderLeft: '5px solid #38bdf8' }}>
+        <div className="glass-card" style={{ borderLeft: '5px solid #38bdf8', width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 600 }}>COARSE PARTICULATE (PM10)</span>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginTop: '0.5rem' }}>
             <span style={{ fontSize: '2.5rem', fontWeight: 800, color: '#38bdf8', lineHeight: 1 }}>{data.pollutants.pm10}</span>
@@ -217,17 +217,17 @@ const AnalyticsPage = ({ airQuality }) => {
       </div>
 
       {/* Recharts Visualizations Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.25rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
         {/* Radar Chart: Actual vs WHO Limit */}
-        <div className="glass-card">
+        <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <ShieldAlert size={18} color="#f59e0b" /> WHO Guideline vs Actual Telemetry
           </h3>
           <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
             Multi-axis radar comparing ambient pollutant measurements against health safety ceilings
           </p>
-          <div style={{ width: '100%', height: '300px' }}>
-            <ResponsiveContainer width="100%" height="100%">
+          <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(240px, 40vh, 300px)', overflow: 'hidden' }}>
+            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={radarData}>
                 <PolarGrid stroke="rgba(255, 255, 255, 0.1)" />
                 <PolarAngleAxis dataKey="subject" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 12 }} />
@@ -248,7 +248,7 @@ const AnalyticsPage = ({ airQuality }) => {
         </div>
 
         {/* Detailed Pollutant Audit Table */}
-        <div className="glass-card">
+        <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Layers size={18} color="#38bdf8" /> WHO Environmental Compliance Audit
           </h3>
@@ -256,8 +256,8 @@ const AnalyticsPage = ({ airQuality }) => {
             Detailed breakdown of pollutant exposure factors
           </p>
 
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem', textAlign: 'left' }}>
+          <div style={{ overflowX: 'auto', width: '100%', maxWidth: '100%', minWidth: 0, WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', minWidth: '300px', borderCollapse: 'collapse', fontSize: '0.85rem', textAlign: 'left' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--surface-border)', color: 'var(--text-muted)' }}>
                   <th style={{ padding: '0.6rem 0.5rem' }}>Pollutant</th>

@@ -53,8 +53,8 @@ const ForecastChart = ({ hourlyData }) => {
   };
 
   return (
-    <div className="glass-card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+    <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.25rem', width: '100%', minWidth: 0 }}>
         <div>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <CalendarClock size={20} color="#38bdf8" /> 24-Hour Air Quality Trend & Forecast
@@ -65,7 +65,7 @@ const ForecastChart = ({ hourlyData }) => {
         </div>
 
         {/* Metric Selector Pills */}
-        <div style={{ display: 'flex', gap: '0.4rem' }}>
+        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
           {Object.entries(metricConfigs).map(([key, cfg]) => (
             <button
               key={key}
@@ -79,8 +79,8 @@ const ForecastChart = ({ hourlyData }) => {
         </div>
       </div>
 
-      <div style={{ width: '100%', height: 'clamp(210px, 35vh, 260px)' }}>
-        <ResponsiveContainer width="100%" height="100%">
+      <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(210px, 35vh, 260px)', overflow: 'hidden' }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={hourlyData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
             <defs>
               <linearGradient id="metricGradient" x1="0" y1="0" x2="0" y2="1">

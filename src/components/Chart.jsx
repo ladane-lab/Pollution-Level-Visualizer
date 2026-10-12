@@ -44,12 +44,12 @@ const Chart = ({ pollutants }) => {
   if (data.length === 0) return null;
 
   return (
-    <div className="glass-card">
+    <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
       <h3 style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#f8fafc' }}>
         Pollutant Overview (μg/m³)
       </h3>
-      <div className="chart-container">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="chart-container" style={{ width: '100%', maxWidth: '100%', minWidth: 0, overflow: 'hidden' }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <BarChart
             data={data}
             margin={{ top: 5, right: 15, left: -10, bottom: 5 }}

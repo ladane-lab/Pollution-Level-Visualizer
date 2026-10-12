@@ -147,8 +147,8 @@ const ComparePage = () => {
       </div>
 
       {/* Input Selection Card */}
-      <div className="glass-card">
-        <form onSubmit={handleApply} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', alignItems: 'flex-end' }}>
+      <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
+        <form onSubmit={handleApply} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', alignItems: 'flex-end', width: '100%', minWidth: 0 }}>
           <div className="form-group" style={{ margin: 0 }}>
             <label className="form-label">
               <span>Primary City</span>
@@ -189,7 +189,7 @@ const ComparePage = () => {
         </form>
 
         {/* Quick Presets */}
-        <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+        <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', width: '100%', minWidth: 0 }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>
             Suggested Comparisons:
           </span>
@@ -208,14 +208,14 @@ const ComparePage = () => {
 
       {/* Error state */}
       {error && (
-        <div className="glass-card" style={{ borderLeft: '5px solid #ef4444', color: '#f87171' }}>
+        <div className="glass-card" style={{ borderLeft: '5px solid #ef4444', color: '#f87171', width: '100%', maxWidth: '100%', minWidth: 0 }}>
           {error}
         </div>
       )}
 
       {/* Loading state */}
       {loading && (
-        <div className="glass-card" style={{ textAlign: 'center', padding: '3rem' }}>
+        <div className="glass-card" style={{ textAlign: 'center', padding: '3rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
           <Loader2 size={36} className="spinner" style={{ color: '#38bdf8', margin: '0 auto 1rem' }} />
           <p>Fetching and cross-referencing multi-city air quality data...</p>
         </div>
@@ -223,14 +223,14 @@ const ComparePage = () => {
 
       {/* Comparison Results */}
       {!loading && city1Data && city2Data && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
           {/* Winner Verdict Banner */}
           {comparisonVerdict && (
-            <div className="glass-card" style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(56, 189, 248, 0.1))', border: '1px solid rgba(16, 185, 129, 0.3)', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem' }}>
-              <div style={{ background: '#10b981', color: 'white', padding: '0.75rem', borderRadius: '12px' }}>
+            <div className="glass-card" style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(56, 189, 248, 0.1))', border: '1px solid rgba(16, 185, 129, 0.3)', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem', flexWrap: 'wrap', width: '100%', maxWidth: '100%', minWidth: 0 }}>
+              <div style={{ background: '#10b981', color: 'white', padding: '0.75rem', borderRadius: '12px', flexShrink: 0 }}>
                 <Trophy size={24} />
               </div>
-              <div>
+              <div style={{ minWidth: 0, flex: 1 }}>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                   Cleaner Air Winner: {comparisonVerdict.betterCity}
                 </h3>
@@ -242,9 +242,9 @@ const ComparePage = () => {
           )}
 
           {/* Side by Side Scorecards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem', width: '100%', maxWidth: '100%', minWidth: 0 }}>
             {/* City 1 Card */}
-            <div className="glass-card" style={{ borderTop: `5px solid ${info1.colorHex}` }}>
+            <div className="glass-card" style={{ borderTop: `5px solid ${info1.colorHex}`, width: '100%', maxWidth: '100%', minWidth: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.5rem' }}>
                 <div>
                   <h3 style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.4rem)', fontWeight: 800 }}>{city1Data.city}</h3>
@@ -262,7 +262,7 @@ const ComparePage = () => {
                 {info1.label}
               </div>
 
-              <div style={{ marginTop: '1.25rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+              <div style={{ marginTop: '1.25rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 115px), 1fr))', gap: '0.75rem', width: '100%', minWidth: 0 }}>
                 <div className="pollutant-stat-card">
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>PM2.5 Level</span>
                   <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>{city1Data.pollutants.pm25} µg/m³</span>
@@ -275,7 +275,7 @@ const ComparePage = () => {
             </div>
 
             {/* City 2 Card */}
-            <div className="glass-card" style={{ borderTop: `5px solid ${info2.colorHex}` }}>
+            <div className="glass-card" style={{ borderTop: `5px solid ${info2.colorHex}`, width: '100%', maxWidth: '100%', minWidth: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.5rem' }}>
                 <div>
                   <h3 style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.4rem)', fontWeight: 800 }}>{city2Data.city}</h3>
@@ -293,7 +293,7 @@ const ComparePage = () => {
                 {info2.label}
               </div>
 
-              <div style={{ marginTop: '1.25rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+              <div style={{ marginTop: '1.25rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 115px), 1fr))', gap: '0.75rem', width: '100%', minWidth: 0 }}>
                 <div className="pollutant-stat-card">
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>PM2.5 Level</span>
                   <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>{city2Data.pollutants.pm25} µg/m³</span>
@@ -307,13 +307,13 @@ const ComparePage = () => {
           </div>
 
           {/* Comparative Multi-Bar Recharts Chart */}
-          <div className="glass-card">
+          <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>
               Comparative Pollutant Breakdown (µg/m³)
             </h3>
-            <div style={{ width: '100%', height: '320px' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData} margin={{ top: 20, right: 30, left: -10, bottom: 5 }}>
+            <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, height: 'clamp(260px, 45vh, 330px)', overflow: 'hidden' }}>
+              <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+                <BarChart data={chartData} margin={{ top: 20, right: 20, left: -10, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.08)" vertical={false} />
                   <XAxis dataKey="pollutant" stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />
                   <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8' }} />

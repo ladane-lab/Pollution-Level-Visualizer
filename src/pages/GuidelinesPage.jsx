@@ -89,17 +89,17 @@ const GuidelinesPage = () => {
       </div>
 
       {/* AQI Scale Matrix */}
-      <div className="glass-card">
+      <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Activity size={20} color="#38bdf8" /> US EPA Air Quality Index (AQI) Classification
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1rem', width: '100%', minWidth: 0 }}>
           {aqiCategories.map((cat) => (
             <div
               key={cat.range}
               className="pollutant-stat-card"
-              style={{ borderLeft: `5px solid ${cat.color}`, background: 'var(--surface-hover)' }}
+              style={{ borderLeft: `5px solid ${cat.color}`, background: 'var(--surface-hover)', width: '100%', minWidth: 0 }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: '1.2rem', fontWeight: 800, color: cat.color }}>
@@ -124,13 +124,13 @@ const GuidelinesPage = () => {
       </div>
 
       {/* Pollutant Profiles */}
-      <div className="glass-card">
+      <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Wind size={20} color="#a855f7" /> Common Pollutants & Physiological Hazards
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem' }}>
-          <div className="pollutant-stat-card">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem', width: '100%', minWidth: 0 }}>
+          <div className="pollutant-stat-card" style={{ width: '100%', minWidth: 0 }}>
             <h4 style={{ color: '#38bdf8', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>
               PM2.5 (Fine Inhalable Particles)
             </h4>
@@ -140,7 +140,7 @@ const GuidelinesPage = () => {
             </p>
           </div>
 
-          <div className="pollutant-stat-card">
+          <div className="pollutant-stat-card" style={{ width: '100%', minWidth: 0 }}>
             <h4 style={{ color: '#8b5cf6', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>
               PM10 (Coarse Particles & Dust)
             </h4>
@@ -150,7 +150,7 @@ const GuidelinesPage = () => {
             </p>
           </div>
 
-          <div className="pollutant-stat-card">
+          <div className="pollutant-stat-card" style={{ width: '100%', minWidth: 0 }}>
             <h4 style={{ color: '#f43f5e', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>
               NO₂ (Nitrogen Dioxide)
             </h4>
@@ -160,7 +160,7 @@ const GuidelinesPage = () => {
             </p>
           </div>
 
-          <div className="pollutant-stat-card">
+          <div className="pollutant-stat-card" style={{ width: '100%', minWidth: 0 }}>
             <h4 style={{ color: '#10b981', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>
               O₃ (Ground-Level Ozone)
             </h4>
@@ -173,7 +173,7 @@ const GuidelinesPage = () => {
       </div>
 
       {/* NASA Air Purifying Plants */}
-      <div className="glass-card">
+      <div className="glass-card" style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Sprout size={20} color="#10b981" /> Natural Air Purification: NASA Clean Air Study Plants
         </h3>
@@ -181,9 +181,9 @@ const GuidelinesPage = () => {
           According to NASA environmental research, these resilient indoor plants significantly reduce volatile organic compounds (VOCs) and indoor pollutants:
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1rem', width: '100%', minWidth: 0 }}>
           {indoorPlants.map((plant) => (
-            <div key={plant.name} className="pollutant-stat-card">
+            <div key={plant.name} className="pollutant-stat-card" style={{ width: '100%', minWidth: 0 }}>
               <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#10b981', marginBottom: '0.4rem' }}>
                 🌱 {plant.name}
               </div>
